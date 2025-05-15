@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLICITUD SERVICIOS MEGACABLE</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // URL de App Script y hoja de cálculo vinculada
+    const URL_APPSCRIPT = "https://script.google.com/macros/s/AKfycbw3VbZ3f-qI6oPoDg8SyxT3pNvuk8fFR1tOO7eEFtyPBeR39P9WpnQmwSVPDx5uRjPT/exec";
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>SOLICITUD SERVICIOS MEGACABLE</h1>
+    <form id="formulario">
+      <label>Nombre del cliente:<input type="text" name="nombre" required></label>
+
+      <label>Teléfono:<input type="tel" name="telefono" pattern="\d{10}" required placeholder="10 dígitos"></label>
+      <span id="errorTelefono" class="error"></span>
+
+      <label>Servicio:
+        <select name="servicio" required>
+          <option value="Residencial">Residencial</option>
+          <option value="Negocio">Negocio</option>
+        </select>
+      </label>
+
+      <label>Dirección:<textarea name="direccion" rows="2" required></textarea></label>
+      <label>Código Postal:<input type="text" name="cp" pattern="\d{5}" required></label>
+
+      <label>Velocidad:
+        <select name="velocidad" required>
+          <option value="100mb">100mb</option>
+          <option value="200mb">200mb</option>
+          <option value="300mb">300mb</option>
+          <option value="500mb">500mb</option>
+          <option value="1000mb">1000mb</option>
+        </select>
+      </label>
+
+      <label>Paquete:
+        <select name="paquete" required>
+          <option value="Doble: Internet+TelefoniaFija">Doble: Internet+TelefoniaFija</option>
+          <option value="Triple: Internet+TelefoniaFija+TV-XView">Triple: Internet+TelefoniaFija+TV-XView</option>
+        </select>
+      </label>
+
+      <label>Fecha de visita:<input type="text" name="fecha" placeholder="DD/MM/AAAA HH:MM" required></label>
+
+      <label>Comentarios adicionales:<textarea name="comentarios"></textarea></label>
+
+      <button type="submit">Enviar solicitud</button>
+    </form>
+
+    <p id="mensajeExito" class="success"></p>
+
+    <section id="registros">
+      <h2>Registros recibidos</h2>
+      <table id="tablaRegistros">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Servicio</th>
+            <th>Dirección</th>
+            <th>Velocidad</th>
+            <th>Paquete</th>
+            <th>Fecha de Visita</th>
+            <th>Comentarios</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
